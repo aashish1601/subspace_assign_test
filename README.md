@@ -57,7 +57,7 @@ src/
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/speech-app.git
+git clone https://github.com/aashish1601/subspace_assign_test.git
 cd speech-app
 npm install
 ```
