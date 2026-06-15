@@ -141,7 +141,22 @@ export default function Dashboard() {
         </div>
 
         <div className="transcript-box" id="transcript-box">
-          <h3>Live Transcript</h3>
+          <div className="transcript-header">
+            <h3>Live Transcript</h3>
+            <button 
+              className="btn-copy" 
+              onClick={() => {
+                if (transcript) {
+                  navigator.clipboard.writeText(transcript);
+                  setStatus("✅ Copied to clipboard!");
+                  setTimeout(() => setStatus("⏹ Stopped. Click Start to begin again."), 2000);
+                }
+              }}
+              disabled={!transcript}
+            >
+              📋 Copy
+            </button>
+          </div>
           <div className="transcript-content" id="transcript-content">
             {transcript || "Your words will appear here in real time..."}
           </div>
